@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All News</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h2>All World News Here</h2>
+    <h1>All World News Here</h1>
     <section></section>
     <script>
       const section = document.querySelector("section");
@@ -23,7 +24,7 @@
             news.articles.forEach((article) => {
               section.innerHTML += `<a href='${article.url}'>
         <article>
-          <img alt='' src="${article.urlToImage}">
+          <img alt='' src="${article.urlToImage}" target='_blank'>
           <h3>${article.title}</h3>
           <p>${article.description}</p>
         </article></a>`;
