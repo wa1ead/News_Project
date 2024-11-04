@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All News</title>
-</head>
-<body>
-  <h2>All Moroccan News Here</h2>
-  <section>
-    
-  </section>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All News</title>
+  </head>
+  <body>
+    <h2>All Moroccan News Here</h2>
+    <section></section>
+    <script>
+      const section = document.querySelector("section");
+      async function getNews() {
+        var url =
+          "https://newsapi.org/v2/top-headlines?" +
+          "country=us&" +
+          "apiKey=256fcb3a754e4f27a4a9f83b94702e19";
+        try {
+          const response = await fetch(url);
+          const news = await response.json();
+          console.log(news.articles);
+        } catch (err) {
+          console.error("Error! ", err);
+        }
+      }
+      getNews();
+    </script>
+  </body>
 </html>
