@@ -6,7 +6,7 @@
     <title>All News</title>
   </head>
   <body>
-    <h2>All Moroccan News Here</h2>
+    <h2>All World News Here</h2>
     <section></section>
     <script>
       const section = document.querySelector("section");
@@ -18,7 +18,19 @@
         try {
           const response = await fetch(url);
           const news = await response.json();
-          console.log(news.articles);
+          console.log(news);
+          if (Array.isArray(news.articles)) {
+            news.articles.forEach((article) => {
+              section.innerHTML += `<a href='${article.url}'>
+        <article>
+          <img alt='' src="${article.urlToImage}">
+          <h3>${article.title}</h3>
+          <p>${article.description}</p>
+        </article></a>`;
+            });
+          } else {
+            section.innerHTML = "<p>No articles found.</p>";
+          }
         } catch (err) {
           console.error("Error! ", err);
         }
