@@ -26,7 +26,9 @@
         <article>
           <img alt='' src="${article.urlToImage}" target='_blank'>
           <h3>${article.title}</h3>
-          <p>${article.description}</p>
+          <p>${
+            article.description ? article.description : "No description added"
+          }</p>
         </article></a>`;
             });
           } else {

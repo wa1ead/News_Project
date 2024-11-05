@@ -30,23 +30,23 @@ article {
 a {
   text-decoration: none;
   cursor: pointer;
-  color: black
+  color: black;
 }
 
 article img {
   width: 8rem;
   height: 8rem;
-  border-radius: 2rem
+  border-radius: 2rem;
 }
 
 article h3 {
   font-size: large;
   font-weight: bold;
-  max-width: 40%
+  max-width: 40%;
 }
 
-article p{
+article p {
   font-size: medium;
   font-weight: italic;
-  max-width: 40%
+  max-width: 40%;
 }
